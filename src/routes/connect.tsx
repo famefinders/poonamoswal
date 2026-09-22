@@ -48,7 +48,7 @@ function ConnectPage() {
           body: formData,
         }),
         // 2. Save directly into MongoDB Atlas via Express Backend
-        fetch("https://poonam-oswal-s-legacy-backend.onrender.com/api/contact", {
+        fetch("https://poonamoswal-api.onrender.com/api/contact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -88,7 +88,7 @@ function ConnectPage() {
             message: `New subscriber signed up: ${email}`,
           }),
         }),
-        fetch("https://poonam-oswal-s-legacy-backend.onrender.com/api/contact", {
+        fetch("https://poonamoswal-api.onrender.com/api/contact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
