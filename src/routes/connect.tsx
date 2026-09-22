@@ -18,6 +18,8 @@ export const Route = createFileRoute("/connect")({
   component: ConnectPage,
 });
 
+const COMPANY_WEB3FORMS_KEY = "adf390a3-57ba-4401-927b-d57870bdae5d";
+
 function ConnectPage() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -37,15 +39,23 @@ function ConnectPage() {
     const subject = (formData.get("subject") as string) || "";
     const message = (formData.get("message") as string) || "";
 
-    // Web3Forms access key
-    formData.append("access_key", "adf390a3-57ba-4401-927b-d57870bdae5d");
-
     try {
       await Promise.allSettled([
-        // 1. Send live email alert via Web3Forms
+        // 1. Send live email alert via Web3Forms (JSON Payload)
         fetch("https://api.web3forms.com/submit", {
           method: "POST",
-          body: formData,
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: COMPANY_WEB3FORMS_KEY,
+            name: fullName,
+            email: email,
+            subject: subject || "New Contact Message - poonamoswal.com",
+            message: message || "No message body provided.",
+            from_name: "Poonam Oswal Website",
+          }),
         }),
         // 2. Save directly into MongoDB Atlas via Express Backend
         fetch("https://poonamoswal-api.onrender.com/api/contact", {
@@ -72,22 +82,27 @@ function ConnectPage() {
   const handleNewsletter = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const email = formData.get("newsletter_email") as string;
+    const email = (formData.get("newsletter_email") as string) || "";
 
-    // Web3Forms + DB storage
     try {
       await Promise.allSettled([
+        // Web3Forms alert to company email
         fetch("https://api.web3forms.com/submit", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
           body: JSON.stringify({
-            access_key: "632a9529-8ab1-4f35-9c49-9e6517e58ad6",
-            subject: "New Newsletter Subscriber",
-            from_name: "Website Newsletter",
+            access_key: COMPANY_WEB3FORMS_KEY,
+            name: "Newsletter Subscriber",
             email: email,
-            message: `New subscriber signed up: ${email}`,
+            subject: "New Newsletter Subscriber - poonamoswal.com",
+            message: `New subscriber signed up with email: ${email}`,
+            from_name: "Poonam Oswal Newsletter",
           }),
         }),
+        // DB save
         fetch("https://poonamoswal-api.onrender.com/api/contact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -95,7 +110,7 @@ function ConnectPage() {
             name: "Newsletter Subscriber",
             email: email,
             subject: "Newsletter Subscription",
-            message: "Subscribed via website footer/newsletter banner.",
+            message: "Subscribed via website newsletter banner.",
           }),
         }),
       ]);
@@ -189,12 +204,12 @@ function ConnectPage() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid gap-6 sm:grid-cols-2">
-                    {/* First Name (Compulsory) */}
+                    {/* First Name */}
                     <div className="space-y-2">
                       <label className="text-xs font-semibold text-foreground/80">First Name *</label>
                       <Input name="first_name" required placeholder="First name here" className="rounded-xl border-border/80 bg-background" />
                     </div>
-                    {/* Last Name (Optional) */}
+                    {/* Last Name */}
                     <div className="space-y-2">
                       <label className="text-xs font-semibold text-foreground/80">Last Name</label>
                       <Input name="last_name" placeholder="Last name here (optional)" className="rounded-xl border-border/80 bg-background" />
@@ -202,19 +217,19 @@ function ConnectPage() {
                   </div>
 
                   <div className="grid gap-6 sm:grid-cols-2">
-                    {/* Email Address (Compulsory) */}
+                    {/* Email Address */}
                     <div className="space-y-2">
                       <label className="text-xs font-semibold text-foreground/80">Email Address *</label>
                       <Input name="email" required type="email" placeholder="Add email" className="rounded-xl border-border/80 bg-background" />
                     </div>
-                    {/* Subject (Compulsory) */}
+                    {/* Subject */}
                     <div className="space-y-2">
                       <label className="text-xs font-semibold text-foreground/80">Subject *</label>
                       <Input name="subject" required placeholder="How can we help you?" className="rounded-xl border-border/80 bg-background" />
                     </div>
                   </div>
 
-                  {/* Comments / Questions (Optional) */}
+                  {/* Comments / Questions */}
                   <div className="space-y-2">
                     <label className="text-xs font-semibold text-foreground/80">Comments / Questions</label>
                     <Textarea name="message" rows={4} placeholder="Comments (optional)" className="rounded-xl border-border/80 bg-background resize-none" />
