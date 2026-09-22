@@ -123,47 +123,25 @@ function ConnectPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      {/* 1. TOP DUAL IMAGE SLOTS */}
+      {/* 1. TOP SINGLE BANNER */}
       <section className="bg-background px-6 pb-12 pt-36 sm:px-10 sm:pt-40">
-        <div className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-2">
-          {/* Image Slot 1 */}
-          <div className="relative aspect-[16/9] min-h-[220px] overflow-hidden rounded-2xl border border-border/70 bg-[#faf6f0] shadow-sm flex items-center justify-center">
+        <div className="mx-auto max-w-7xl">
+          <div className="relative aspect-[21/9] min-h-[260px] overflow-hidden rounded-3xl border border-border/70 bg-[#faf6f0] shadow-sm flex items-center justify-center">
             <img
               src="/connect-1.jpg"
-              alt="Connect Banner 1"
+              alt="Connect Banner"
               className="size-full object-cover"
               onError={(e) => {
                 e.currentTarget.style.display = "none";
               }}
             />
             <div className="absolute inset-0 -z-10 flex flex-col items-center justify-center p-6 text-center text-muted-foreground/60 bg-gradient-to-b from-amber-50/40 to-orange-100/30">
-              <ImageIcon className="size-10 mb-2 opacity-50 text-[#c2410c]" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-foreground/70">
-                Image Slot 1
+              <ImageIcon className="size-12 mb-2 opacity-50 text-[#c2410c]" />
+              <span className="text-sm font-semibold uppercase tracking-wider text-foreground/70">
+                Connect Banner
               </span>
-              <span className="text-[11px] mt-1 text-muted-foreground">
+              <span className="text-xs mt-1 text-muted-foreground">
                 <code>public/connect-1.jpg</code>
-              </span>
-            </div>
-          </div>
-
-          {/* Image Slot 2 */}
-          <div className="relative aspect-[16/9] min-h-[220px] overflow-hidden rounded-2xl border border-border/70 bg-[#faf6f0] shadow-sm flex items-center justify-center">
-            <img
-              src="/connect-2.jpg"
-              alt="Connect Banner 2"
-              className="size-full object-cover"
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-              }}
-            />
-            <div className="absolute inset-0 -z-10 flex flex-col items-center justify-center p-6 text-center text-muted-foreground/60 bg-gradient-to-b from-amber-50/40 to-orange-100/30">
-              <ImageIcon className="size-10 mb-2 opacity-50 text-[#c2410c]" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-foreground/70">
-                Image Slot 2
-              </span>
-              <span className="text-[11px] mt-1 text-muted-foreground">
-                <code>public/connect-2.jpg</code>
               </span>
             </div>
           </div>
