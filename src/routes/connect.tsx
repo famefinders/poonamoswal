@@ -38,7 +38,7 @@ function ConnectPage() {
     const message = (formData.get("message") as string) || "";
 
     // Web3Forms access key
-    formData.append("access_key", "632a9529-8ab1-4f35-9c49-9e6517e58ad6");
+    formData.append("access_key", "adf390a3-57ba-4401-927b-d57870bdae5d");
 
     try {
       await Promise.allSettled([
