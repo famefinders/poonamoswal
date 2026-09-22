@@ -123,10 +123,10 @@ function ConnectPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      {/* 1. TOP SINGLE BANNER */}
-      <section className="bg-background px-6 pb-12 pt-36 sm:px-10 sm:pt-40">
-        <div className="mx-auto max-w-7xl">
-          <div className="relative aspect-[21/9] min-h-[260px] overflow-hidden rounded-3xl border border-border/70 bg-[#faf6f0] shadow-sm flex items-center justify-center">
+      {/* 1. TOP COMPACT BANNER */}
+      <section className="bg-background px-6 pb-6 pt-32 sm:px-10 sm:pt-36">
+        <div className="mx-auto max-w-5xl">
+          <div className="relative h-48 sm:h-64 w-full overflow-hidden rounded-2xl border border-border/70 bg-[#faf6f0] shadow-sm flex items-center justify-center">
             <img
               src="/connect-1.jpg"
               alt="Connect Banner"
@@ -136,7 +136,7 @@ function ConnectPage() {
               }}
             />
             <div className="absolute inset-0 -z-10 flex flex-col items-center justify-center p-6 text-center text-muted-foreground/60 bg-gradient-to-b from-amber-50/40 to-orange-100/30">
-              <ImageIcon className="size-12 mb-2 opacity-50 text-[#c2410c]" />
+              <ImageIcon className="size-10 mb-2 opacity-50 text-[#c2410c]" />
               <span className="text-sm font-semibold uppercase tracking-wider text-foreground/70">
                 Connect Banner
               </span>
