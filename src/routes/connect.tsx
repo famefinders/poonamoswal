@@ -290,8 +290,8 @@ function ConnectPage() {
                 Our Email
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                <a href="mailto:info@poonamoswal.com" className="hover:text-foreground hover:underline">
-                  info@poonamoswal.com
+                <a href="mailto:rani.poonam@gmail.com" className="hover:text-foreground hover:underline">
+                  rani.poonam@gmail.com
                 </a>
               </p>
             </div>

@@ -54,7 +54,7 @@ export function Footer() {
                 className="flex items-center gap-2 transition-colors hover:text-[#fbbf24]"
               >
                 <Mail className="size-4 text-[#fbbf24]" />
-                <span>info@poonamoswal.com</span>
+                <span>rani.poonam@gmail.com</span>
               </a>
               <a
                 href="tel:+918743969027"
