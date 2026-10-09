@@ -210,7 +210,7 @@ function ConnectPage() {
                   {/* Comments / Questions */}
                   <div className="space-y-2">
                     <label className="text-xs font-semibold text-foreground/80">Comments / Questions</label>
-                    <Textarea name="message" rows={4} placeholder="Comments (optional)" className="rounded-xl border-border/80 bg-background resize-none" />
+                    <Textarea name="message" rows={4} placeholder="Comments" className="rounded-xl border-border/80 bg-background resize-none" />
                   </div>
 
                   <div>
