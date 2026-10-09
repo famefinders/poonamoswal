@@ -9,7 +9,7 @@ export const Route = createFileRoute("/author")({
       {
         name: "description",
         content:
-          "Explore published books by Poonam Oswal, including ‘प्रकृति की गोद में’ and ‘जीवन के बहुरंग’. Uplifting Hindi literature available on Amazon and Kindle.",
+          "Explore published books by Poonam Oswal, including ‘प्रकृति की गोद से’ and ‘जीवन के बहुरंग’. Uplifting Hindi literature available on Amazon and Kindle.",
       },
       { property: "og:title", content: "Poonamm B Oswal — Published Books & Works" },
       {
@@ -29,9 +29,9 @@ export const Route = createFileRoute("/author")({
 function AuthorPage() {
   const books = [
     {
-      title: "‘प्रकृति की गोद में’",
+      title: "‘प्रकृति की गोद से’",
       desc: "A soulful expression of harmony between human life and nature, encouraging readers to reconnect with the serenity and healing power of the natural world.",
-      sub: "‘प्रकृति की गोद में’",
+      sub: "‘प्रकृति की गोद से’",
     },
     {
       title: "‘जीवन के बहुरंग’",
@@ -105,7 +105,7 @@ function AuthorPage() {
               around them. Her work blends thoughtful storytelling with philosophical insight,
               creating literature that resonates with readers who appreciate meaningful and
               uplifting writing. Her books explore themes of nature, human emotions,
-              relationships, and personal transformation. In works like ‘प्रकृति की गोद में’, she
+              relationships, and personal transformation. In works like ‘प्रकृति की गोद से’, she
               highlights the peaceful connection between humans and nature, encouraging readers
               to rediscover the healing and harmony found in the natural world. In ‘जीवन के
               बहुरंग’, she captures the many shades of life, presenting reflections that guide
