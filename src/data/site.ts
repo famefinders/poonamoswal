@@ -100,7 +100,7 @@ export const astroPlans = [
 
 export const books = [
   {
-    title: "प्रकृति की गोद में",
+    title: "प्रकृति की गोद से",
     type: "Poetry & Short Stories",
     tone: "nature",
     amazonUrl: "https://www.amazon.in",
