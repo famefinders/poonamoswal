@@ -50,7 +50,7 @@ export function Footer() {
                 <span>Patparganj, East Delhi</span>
               </div>
               <a
-                href="mailto:info@poonamoswal.com"
+                href="mailto:rani.poonam@gmail.com"
                 className="flex items-center gap-2 transition-colors hover:text-[#fbbf24]"
               >
                 <Mail className="size-4 text-[#fbbf24]" />
